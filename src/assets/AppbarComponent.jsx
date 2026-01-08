@@ -38,7 +38,11 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{
+        backgroundColor:'#051163',
+        paddingTop:'1rem',
+        height: {display: { xs: '100%', md: '25vh' }}
+    }}>
       <Container maxWidth>
         <Toolbar disableGutters>
             <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
@@ -52,16 +56,16 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              fontFamily: 'League Spartan',
+              fontSize: '1.5rem',
               fontWeight: 700,
-              letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
-              width:'15rem',
+              width:'12rem',
               textAlign:'center'
             }}
           >
-            Legendes du Judo Francais
+            Les Legendes du Judo Francais
           </Typography>
           </div>
 
@@ -94,7 +98,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                  <Typography sx={{ textAlign: 'center', fontFamily: 'Gliker' }}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -112,7 +116,7 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: 'Gliker',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -125,12 +129,12 @@ function ResponsiveAppBar() {
           </Typography>
           </div>
           
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'space-evenly' }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', fontFamily: 'League Spartan', fontWeight:'900', fontSize:'1.2rem',  }}
               >
                 {page}
               </Button>
